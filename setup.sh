@@ -3,6 +3,9 @@
 ## sh エミュレーションモード
 emulate -R sh
 
+## make .config dir
+mkdir ~/.config
+
 ## install brew
 if ! which brew > /dev/null; then
     echo "[INFO] install brew"
@@ -19,12 +22,17 @@ else
     echo "[INFO] fzf is already installed"
 fi
 
+## install ag
+if ! which ag > /dev/null; then
+    echo "[INFO] install ag"
+    brew install the_silver_searcher
+else
+    echo "[INFO] ag is already installed"
+fi
+
 ## setup zsh
 ln -nfs ~/dotfiles/.zshrc ~/.zshrc
 source ~/.zshrc
-
-## make .config dir
-mkdir -p ~/.config
 
 ## install alacritty
 if ! which brew > /dev/null; then
@@ -45,3 +53,13 @@ else
 fi
 
 ln -nfs ~/dotfiles/nvim ~/.config/nvim
+
+## install dein.vim
+if [ -d "~/.cache/dein/" ]; then
+    echo "[INFO] install dein.vim"
+    curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+    sh ./installer.sh ~/.cache/dein
+    rm ./installer.sh
+else
+    echo "[INFO] dein.vim is already installed"
+fi

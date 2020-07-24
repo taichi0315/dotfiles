@@ -23,3 +23,26 @@ set scrolloff=30          " スクロールをした際にカーソルも移動�
 
 " For ESC key mapping
 inoremap <silent> jj <ESC>
+
+" Add the dein installation directory into runtimepath
+set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Add plugIn by dein
+if dein#load_state('~/.cache/dein')
+  call dein#begin('~/.cache/dein')
+
+  call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('Shougo/deoplete.nvim')
+
+  " fzf
+  call dein#add('junegunn/fzf', {'build': './install --all'})
+  call dein#add('junegunn/fzf.vim')
+
+  call dein#end()
+  call dein#save_state()
+endif
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
