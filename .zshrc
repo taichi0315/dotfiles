@@ -18,3 +18,10 @@ zstyle ':vcs_info:*'     actionformats     '[%b|%a]'
 
 setopt PROMPT_SUBST
 PROMPT='%F{magenta}${PWD/#$HOME/~}%f ${vcs_info_msg_0_} > '
+
+# fvi - search file and open file by nvim
+fvi() {
+  files=$(git ls-files) &&
+  selected_files=$(echo "$files" | fzf -m --preview 'head -100 {}') &&
+  vi $selected_files
+}
