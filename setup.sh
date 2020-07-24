@@ -11,6 +11,14 @@ else
     echo "[INFO] brew is already installed"
 fi
 
+## install fzf
+if ! which fzf > /dev/null; then
+    echo "[INFO] install fzf"
+    brew install fzf
+else
+    echo "[INFO] fzf is already installed"
+fi
+
 ## setup zsh
 ln -nfs ~/dotfiles/.zshrc ~/.zshrc
 source ~/.zshrc
