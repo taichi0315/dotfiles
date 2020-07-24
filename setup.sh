@@ -63,3 +63,15 @@ if [ -d "~/.cache/dein" ]; then
 else
     echo "[INFO] dein.vim is already installed"
 fi
+
+## install python
+if ! which python3 > /dev/null; then
+    echo "[INFO] install python"
+    brew install python
+    pip3 install neovim
+    brew tap homebrew/cask-fonts
+    brew cask install font-hack-nerd-font
+else
+    echo "[INFO] python is already installed"
+fi
+

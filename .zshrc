@@ -19,6 +19,9 @@ zstyle ':vcs_info:*'     actionformats     '[%b|%a]'
 setopt PROMPT_SUBST
 PROMPT='%F{magenta}${PWD/#$HOME/~}%f ${vcs_info_msg_0_} $ '
 
+# python
+export PATH=/usr/local/bin:$PATH
+
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 

@@ -41,6 +41,10 @@ if dein#load_state('~/.cache/dein')
   call dein#add('fatih/vim-go')               " Go
   call dein#add('digitaltoad/vim-pug')        " Pug
 
+  " defx
+  call dein#add('Shougo/defx.nvim')
+  call dein#add('kristijanhusak/defx-git')
+
   " vim-airline
   call dein#add('vim-airline/vim-airline')
   call dein#add('vim-airline/vim-airline-themes')
@@ -56,4 +60,102 @@ endif
 " If you want to install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
+endif
+
+" Config for Neovim
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+" For defx
+" Key mapping of defx
+autocmd FileType defx call s:defx_my_settings()
+function! s:defx_my_settings() abort
+  " 【o】 ツリーを表示/非表示する
+  nnoremap <silent><buffer><expr> o
+  \ defx#do_action('open_or_close_tree')
+  " 【CR】 ファイルを開く
+  nnoremap <silent><buffer><expr> <CR>
+  \ defx#do_action('drop')
+  " 【i】 ウィンドウを水平分割してファイルを開く
+  nnoremap <silent><buffer><expr> i
+  \ defx#do_action('open', 'split')
+  " 【s】 ウィンドウを垂直分割してファイルを開く
+  nnoremap <silent><buffer><expr> s
+  \ defx#do_action('open', 'vsplit')
+  " 【c】 ファイルをコピーする
+  nnoremap <silent><buffer><expr> c
+  \ defx#do_action('copy')
+  " 【m】 ファイルを移動する
+  nnoremap <silent><buffer><expr> m
+  \ defx#do_action('move')
+  " 【p】 ファイルを貼り付ける
+  nnoremap <silent><buffer><expr> p
+  \ defx#do_action('paste')
+  " 【n】 新しいファイルを作成する
+  nnoremap <silent><buffer><expr> n
+  \ defx#do_action('new_file')
+  " 【N】 新しいディレクトリを作成する
+  nnoremap <silent><buffer><expr> N
+  \ defx#do_action('new_directory')
+  " 【d】 ファイルを削除する
+  nnoremap <silent><buffer><expr> d
+  \ defx#do_action('remove')
+  " 【r】 ファイル名を変更する
+  nnoremap <silent><buffer><expr> r
+  \ defx#do_action('rename')
+  " 【yy】 ファイル/ディレクトリのパスをコピーする
+  nnoremap <silent><buffer><expr> yy
+  \ defx#do_action('yank_path')
+  " 【.】 隠しファイルを表示/非表示する
+  nnoremap <silent><buffer><expr> .
+  \ defx#do_action('toggle_ignored_files')
+  " 【..】 親ディレクトリに移動する
+  nnoremap <silent><buffer><expr> ..
+  \ defx#do_action('cd', ['..'])
+  " 【j】 カーソルを下に移動する
+  nnoremap <silent><buffer><expr> j
+  \ line('.') == line('$') ? 'gg' : 'j'
+  " 【k】 カーソルを上に移動する
+  nnoremap <silent><buffer><expr> k
+  \ line('.') == 1 ? 'G' : 'k'
+endfunction
+
+" Display window of defx
+nnoremap <silent><C-e> :Defx<CR>
+
+" Config for defx
+call defx#custom#option('_', {
+  \ 'winwidth': 120,
+  \ 'split': 'floating',
+  \ 'show_ignored_files': 1,
+  \ 'buffer_name': 'exlorer',
+  \ 'toggle': 1,
+  \ 'resume': 1,
+  \ 'columns': 'mark:indent:git:filename:type',
+  \ })
+
+" Config for defx-git
+call defx#custom#column('git', 'indicators', {
+  \ 'Modified'  : '✹',
+  \ 'Staged'    : '✚',
+  \ 'Untracked' : '✭',
+  \ 'Renamed'   : '➜',
+  \ 'Unmerged'  : '═',
+  \ 'Ignored'   : '☒',
+  \ 'Deleted'   : '✖',
+  \ 'Unknown'   : '?'
+  \ })
+
+" Auto redraw of defx
+autocmd BufWritePost * call defx#redraw()
+autocmd BufEnter * call defx#redraw()
+
+" Config of vim-airline
+let g:airline_theme='lucius'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+" Change cursor by vim mode
+if has('vim_starting')
+  let &t_SI .= "\e[6 q" " For Insert Mode
+  let &t_EI .= "\e[2 q" " For Normal Mode
 endif
