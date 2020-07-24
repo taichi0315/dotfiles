@@ -55,7 +55,7 @@ fi
 ln -nfs ~/dotfiles/nvim ~/.config/nvim
 
 ## install dein.vim
-if [ -d "~/.cache/dein/" ]; then
+if [ -d "~/.cache/dein" ]; then
     echo "[INFO] install dein.vim"
     curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
     sh ./installer.sh ~/.cache/dein

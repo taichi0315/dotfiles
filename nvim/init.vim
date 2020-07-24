@@ -34,6 +34,17 @@ if dein#load_state('~/.cache/dein')
   call dein#add('~/.cache/dein/repos/github.com/Shougo/dein.vim')
   call dein#add('Shougo/deoplete.nvim')
 
+  " Syntax highlight of Languages
+  call dein#add('derekwyatt/vim-scala')       " Scala
+  call dein#add('gre/play2vim')               " Play
+  call dein#add('leafgarland/typescript-vim') " Typescript
+  call dein#add('fatih/vim-go')               " Go
+  call dein#add('digitaltoad/vim-pug')        " Pug
+
+  " vim-airline
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+
   " fzf
   call dein#add('junegunn/fzf', {'build': './install --all'})
   call dein#add('junegunn/fzf.vim')
