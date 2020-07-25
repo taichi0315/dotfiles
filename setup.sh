@@ -69,9 +69,16 @@ if ! which python3 > /dev/null; then
     echo "[INFO] install python"
     brew install python
     pip3 install neovim
-    brew tap homebrew/cask-fonts
-    brew cask install font-hack-nerd-font
 else
     echo "[INFO] python is already installed"
+fi
+
+## install nvm
+if ! which nvm > /dev/null; then
+    echo "[INFO] install nvm"
+    brew install nvm
+    nvm install v10
+else
+    echo "[INFO] nvm is already installed"
 fi
 

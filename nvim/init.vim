@@ -41,6 +41,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('fatih/vim-go')               " Go
   call dein#add('digitaltoad/vim-pug')        " Pug
 
+  " coc.nvim
+  call dein#add('neoclide/coc.nvim')
+
   " defx
   call dein#add('Shougo/defx.nvim')
   call dein#add('kristijanhusak/defx-git')
@@ -159,3 +162,16 @@ if has('vim_starting')
   let &t_SI .= "\e[6 q" " For Insert Mode
   let &t_EI .= "\e[2 q" " For Normal Mode
 endif
+
+" For coc.nvim
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+inoremap <silent><expr> <c-space> coc#refresh()
