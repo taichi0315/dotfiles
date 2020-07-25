@@ -73,11 +73,12 @@ else
     echo "[INFO] python is already installed"
 fi
 
-## install nvm
+## install nvm & yarn
 if ! which nvm > /dev/null; then
     echo "[INFO] install nvm"
     brew install nvm
     nvm install v10
+    npm install -g yarn neovim
 else
     echo "[INFO] nvm is already installed"
 fi
