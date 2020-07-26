@@ -28,7 +28,6 @@ else
     echo "[INFO] tmux is already installed"
 fi
 
-
 ## install alacritty
 if ! which alacritty > /dev/null; then
     echo "[INFO] install alacritty"
