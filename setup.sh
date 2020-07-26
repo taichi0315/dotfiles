@@ -17,29 +17,36 @@ else
 fi
 
 ## make directory .config
-mkdir ~/.config
+mkdir -p ~/.config
+
+## install tmux
+if ! which tmux > /dev/null; then
+    echo "[INFO] install tmux"
+    brew install tmux
+    ln -nfs ~/dotfiles/.tmux.conf ~/.tmux.conf
+else
+    echo "[INFO] tmux is already installed"
+fi
+
 
 ## install alacritty
-if ! which brew > /dev/null; then
+if [ -d "/Applications/Alacritty.app" ]; then
     echo "[INFO] install alacritty"
     brew cask install alacritty
+    ln -nfs ~/dotfiles/alacritty ~/.config/alacritty
 else
     echo "[INFO] alacritty is already installed"
 fi
-
-ln -nfs ~/dotfiles/alacritty ~/.config/alacritty
 
 # setup editor
 ## install neovim
 if ! which nvim > /dev/null; then
     echo "[INFO] install neovim"
     brew install neovim
+    ln -nfs ~/dotfiles/nvim ~/.config/nvim
 else
     echo "[INFO] neovim is already installed"
 fi
-
-## set nvim config
-ln -nfs ~/dotfiles/nvim ~/.config/nvim
 
 ## install dein.vim
 if [ -d "~/.cache/dein" ]; then
