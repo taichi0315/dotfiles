@@ -30,7 +30,7 @@ fi
 
 
 ## install alacritty
-if [ -d "/Applications/Alacritty.app" ]; then
+if ! which alacritty > /dev/null; then
     echo "[INFO] install alacritty"
     brew cask install alacritty
     ln -nfs ~/dotfiles/alacritty ~/.config/alacritty
