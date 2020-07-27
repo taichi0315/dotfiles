@@ -81,10 +81,10 @@ function! s:defx_my_settings() abort
   \   defx#do_action('multi', ['drop', 'quit'])
   " 【i】 ウィンドウを水平分割してファイルを開く
   nnoremap <silent><buffer><expr> i
-  \ defx#do_action('open', 'split')
+  \ defx#do_action('multi', [['drop', 'split'], 'quit'])
   " 【s】 ウィンドウを垂直分割してファイルを開く
   nnoremap <silent><buffer><expr> s
-  \ defx#do_action('open', 'vsplit')
+  \ defx#do_action('multi', [['drop', 'vsplit'], 'quit'])
   " 【c】 ファイルをコピーする
   nnoremap <silent><buffer><expr> c
   \ defx#do_action('copy')
