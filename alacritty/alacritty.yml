@@ -1,6 +1,13 @@
 window:
   startup_mode: SimpleFullscreen
 
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"
+
 key_bindings:
   - { key: N, mods: Command, action: SpawnNewInstance }
 
