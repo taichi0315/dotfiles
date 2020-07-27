@@ -19,7 +19,6 @@ set wrapscan              " 検索結果が最後までいったら最初に戻�
 set fileencoding=utf-8    " ファイル書き込み時の文字コードをutf-8にする
 set nobackup              " ファイル変更後に保存されるバックアップの~ファイルを作成しない
 set noswapfile            " ファイル編集中に保存されるバックアップの.swpファイルを作成しない
-set scrolloff=30          " スクロールをした際にカーソルも移動する
 
 " For ESC key mapping
 inoremap <silent> jj <ESC>
@@ -72,12 +71,14 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " Key mapping of defx
 autocmd FileType defx call s:defx_my_settings()
 function! s:defx_my_settings() abort
-  " 【o】 ツリーを表示/非表示する
+  " 【o】 ファイルを表示／非表示する
   nnoremap <silent><buffer><expr> o
   \ defx#do_action('open_or_close_tree')
   " 【CR】 ファイルを開く
   nnoremap <silent><buffer><expr> <CR>
-  \ defx#do_action('drop')
+  \ defx#is_directory() ?
+  \   defx#do_action('open_tree_recursive') :
+  \   defx#do_action('multi', ['drop', 'quit'])
   " 【i】 ウィンドウを水平分割してファイルを開く
   nnoremap <silent><buffer><expr> i
   \ defx#do_action('open', 'split')
