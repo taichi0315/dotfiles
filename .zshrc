@@ -20,6 +20,9 @@ setopt PROMPT_SUBST
 PROMPT='%F{magenta}${PWD/#$HOME/~}%f $ '
 RPROMPT='${vcs_info_msg_0_}'
 
+# java
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
+
 # python
 export PATH=/usr/local/bin:$PATH
 
