@@ -8,7 +8,6 @@ set cursorline            " カーソル行にラインを表示
 set expandtab             " タブ入力を複数の空白入力に置き換える
 set mouse=a               " 全てのモードでマウス操作を有効化
 set shiftwidth=2          " インデント幅を指定
-set showmatch matchtime=1 " 対応する括弧をハイライト
 set smartindent           " 改行時のインデントを自動化
 set tabstop=2             " タブ幅を指定
 set updatetime=250        " ファイルの読み込み更新頻度
