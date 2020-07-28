@@ -1,5 +1,5 @@
 window:
-  startup_mode: SimpleFullscreen
+  startup_mode: Fullscreen
 
 shell:
   program: /bin/zsh
