@@ -1,5 +1,6 @@
 " Color scheme
-set background=dark
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
 colorscheme hybrid
 
 " Standard config
