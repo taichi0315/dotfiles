@@ -49,7 +49,7 @@ fbr() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-# commit履歴をbranchの分岐も含めて可視化してくれる
+# fshow - git commit browser
 fshow() {
   git log --graph --color=always \
     --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
@@ -59,4 +59,11 @@ fshow() {
       xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
       {}
       FZF-EOF"
+}
+
+# fga - git modified files browser and staging
+fga() {
+  modified_files=$(git status --short | awk '{print $2}') &&
+  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
+  git add $selected_files
 }
