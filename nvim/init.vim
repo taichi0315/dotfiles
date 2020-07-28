@@ -1,5 +1,6 @@
 " Color scheme
-set background=dark
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
 colorscheme hybrid
 
 " Standard config
@@ -18,6 +19,7 @@ set wrapscan              " 検索結果が最後までいったら最初に戻�
 set fileencoding=utf-8    " ファイル書き込み時の文字コードをutf-8にする
 set nobackup              " ファイル変更後に保存されるバックアップの~ファイルを作成しない
 set noswapfile            " ファイル編集中に保存されるバックアップの.swpファイルを作成しない
+let loaded_matchparen = 1 " 括弧のハイライトを非表示
 
 " For ESC key mapping
 inoremap <silent> jj <ESC>
@@ -53,6 +55,9 @@ if dein#load_state('~/.cache/dein')
   " fzf
   call dein#add('junegunn/fzf', {'build': './install --all'})
   call dein#add('junegunn/fzf.vim')
+
+  " indent line
+  call dein#add('Yggdroot/indentLine')
 
   call dein#end()
   call dein#save_state()
@@ -175,3 +180,6 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" For indent line
+let g:indentLine_char = '¦'

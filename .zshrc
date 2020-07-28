@@ -14,11 +14,10 @@ zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' stagedstr         "%F{yellow}!"
 zstyle ':vcs_info:git:*' unstagedstr       "%F{red}+"
 zstyle ':vcs_info:*'     formats           "%F{green}%c%u[%b]%f"
-zstyle ':vcs_info:*'     actionformats     "%F{cyan}[%b|%a]%f"
+zstyle ':vcs_info:*'     actionformats     "%F{cyan}[%b(%a)]%f"
 
 setopt PROMPT_SUBST
-PROMPT='%F{magenta}${PWD/#$HOME/~}%f $ '
-RPROMPT='${vcs_info_msg_0_}'
+PROMPT='%F{magenta}${PWD/#$HOME/~}%f ${vcs_info_msg_0_} $ '
 
 # java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
@@ -50,7 +49,7 @@ fbr() {
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
 }
 
-# commit履歴をbranchの分岐も含めて可視化してくれる
+# fshow - git commit browser
 fshow() {
   git log --graph --color=always \
     --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
@@ -60,4 +59,11 @@ fshow() {
       xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
       {}
       FZF-EOF"
+}
+
+# fga - git modified files browser and staging
+fga() {
+  modified_files=$(git status --short | awk '{print $2}') &&
+  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
+  git add $selected_files
 }
