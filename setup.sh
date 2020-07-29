@@ -1,5 +1,4 @@
 #!/bin/zsh
-#
 
 ## sh エミュレーションモード
 emulate -R sh
