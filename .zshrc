@@ -17,7 +17,8 @@ zstyle ':vcs_info:*'     formats           "%F{green}%c%u[%b]%f"
 zstyle ':vcs_info:*'     actionformats     "%F{cyan}[%b(%a)]%f"
 
 setopt PROMPT_SUBST
-PROMPT='%F{magenta}${PWD/#$HOME/~}%f ${vcs_info_msg_0_} $ '
+PROMPT=' %F{magenta}${PWD/#$HOME/~}%f ${vcs_info_msg_0_}
+ $ '
 
 # java
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
