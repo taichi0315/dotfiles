@@ -59,6 +59,9 @@ if dein#load_state('~/.cache/dein')
   " indent line
   call dein#add('Yggdroot/indentLine')
 
+  " traces
+  call dein#add('markonm/traces.vim')
+
   call dein#end()
   call dein#save_state()
 endif
