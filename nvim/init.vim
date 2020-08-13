@@ -62,6 +62,9 @@ if dein#load_state('~/.cache/dein')
   " traces
   call dein#add('markonm/traces.vim')
 
+  " easy align
+  call dein#add('junegunn/vim-easy-align')
+
   call dein#end()
   call dein#save_state()
 endif
@@ -186,3 +189,7 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " For indent line
 let g:indentLine_char = '¦'
+
+" For easy align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
