@@ -64,6 +64,9 @@ if dein#load_state('~/.cache/dein')
 
   " easy align
   call dein#add('junegunn/vim-easy-align')
+  
+  " fugitive
+  call dein#add('tpope/vim-fugitive')
 
   " fugitive
   call dein#add('tpope/vim-fugitive')
