@@ -68,9 +68,6 @@ if dein#load_state('~/.cache/dein')
   " fugitive
   call dein#add('tpope/vim-fugitive')
 
-  " fugitive
-  call dein#add('tpope/vim-fugitive')
-
   call dein#end()
   call dein#save_state()
 endif
