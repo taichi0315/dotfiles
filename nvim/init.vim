@@ -22,12 +22,6 @@ set noswapfile            " ファイル編集中に保存されるバックア�
 set autoread              " ファイルを自動更新
 let loaded_matchparen = 1 " 括弧のハイライトを非表示
 
-" 他のウィンドウ・アプリでの変更を反映する
-augroup vimrc-checktime
-  autocmd!
-  autocmd WinEnter * checktime
-augroup END
-
 " For ESC key mapping
 inoremap <silent> jj <ESC>
 
@@ -203,3 +197,6 @@ let g:indentLine_char = '¦'
 " For easy align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+" 他のウィンドウ・アプリでの変更を反映する
+au FocusGained,BufEnter * checktime
