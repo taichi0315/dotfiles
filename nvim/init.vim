@@ -19,6 +19,7 @@ set wrapscan              " 検索結果が最後までいったら最初に戻�
 set fileencoding=utf-8    " ファイル書き込み時の文字コードをutf-8にする
 set nobackup              " ファイル変更後に保存されるバックアップの~ファイルを作成しない
 set noswapfile            " ファイル編集中に保存されるバックアップの.swpファイルを作成しない
+set autoread              " ファイルを自動更新
 let loaded_matchparen = 1 " 括弧のハイライトを非表示
 
 " For ESC key mapping
