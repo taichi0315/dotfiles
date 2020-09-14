@@ -7,8 +7,6 @@
 
 [delta]
   line-numbers = true
-  minus-style = red
-  plus-color = green
   side-by-side = true
 
 [interactive]
