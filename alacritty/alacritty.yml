@@ -1,5 +1,8 @@
 window:
   startup_mode: Maximized
+  padding:
+    x: 30
+    y: 0
 
 key_bindings:
   - { key: N, mods: Command, action: SpawnNewInstance }
