@@ -1,0 +1,15 @@
+[user]
+	email = k.taichi0315@gmail.com
+	name = taichi0315
+
+[core]
+  pager = delta
+
+[delta]
+  line-numbers = true
+  minus-style = red
+  plus-color = green
+  side-by-side = true
+
+[interactive]
+  diffFilter = delta --color-only

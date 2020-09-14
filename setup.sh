@@ -99,3 +99,6 @@ if ! which exa > /dev/null; then
 else
   echo "[INFO] exa is already installed"
 fi
+
+brew install git-delta
+ln -nfs ~/dotfiles/.gitconfig ~/.gitconfig
