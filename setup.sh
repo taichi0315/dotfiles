@@ -120,3 +120,5 @@ else
   echo "[INFO] git-delta is already installed"
 fi
 
+brew install starship
+
