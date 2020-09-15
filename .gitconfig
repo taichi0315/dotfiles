@@ -1,0 +1,13 @@
+[user]
+	email = taichi.kushiro@nextbeat.net
+	name = Taichi Kushiro
+
+[core]
+  pager = delta
+
+[delta]
+  line-numbers = true
+  side-by-side = true
+
+[interactive]
+  diffFilter = delta --color-only

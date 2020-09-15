@@ -1,9 +1,8 @@
 window:
   startup_mode: Maximized
   padding:
-    x: 30
+    x: 5
     y: 5
-  dynamic_padding: true
 
 key_bindings:
   - { key: N, mods: Command, action: SpawnNewInstance }
@@ -41,4 +40,24 @@ colors:
     white:   '#fcf7e2'
 
 font:
+  # Normal (roman) font face
+  normal:
+    family: Hack Nerd Font Mono
+    style: Regular
+
+  # Bold font face
+  bold:
+    family: Hack Nerd Font Mono
+    style: Bold
+
+  # Italic font face
+  italic:
+    family: Hack Nerd Font Mono
+    style: Italic
+
+  # Bold italic font face
+  bold_italic:
+    family: Hack Nerd Font Mono
+    style: Bold Italic
+
   size: 12.0
