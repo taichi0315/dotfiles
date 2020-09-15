@@ -69,6 +69,9 @@ if dein#load_state('~/.cache/dein')
   " fugitive
   call dein#add('tpope/vim-fugitive')
 
+  " auto pairs
+  call dein#add('jiangmiao/auto-pairs')
+
   call dein#end()
   call dein#save_state()
 endif
