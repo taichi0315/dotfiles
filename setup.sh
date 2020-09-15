@@ -100,5 +100,13 @@ else
   echo "[INFO] exa is already installed"
 fi
 
+## install zoxide
+if ! which zoxide > /dev/null; then
+  echo "[INFO] install zoxide"
+  brew install zoxide
+else
+  echo "[INFO] zoxide is already installed"
+fi
+
 brew install git-delta
 ln -nfs ~/dotfiles/.gitconfig ~/.gitconfig

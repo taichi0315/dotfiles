@@ -18,6 +18,9 @@ if [[ $(command -v exa) ]]; then
   alias lta=eta
 fi
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 # prompt
 autoload -Uz vcs_info
 precmd() { vcs_info }
