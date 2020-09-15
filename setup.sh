@@ -8,6 +8,10 @@ emulate -R sh
 ln -nfs ~/dotfiles/.zshrc ~/.zshrc
 source ~/.zshrc
 
+## set git config
+ln -nfs ~/dotfiles/.gitconfig ~/.gitconfig
+ln -nfs ~/dotfiles/git ~/.config/git
+
 ## install brew
 if ! which brew > /dev/null; then
     echo "[INFO] install brew"
@@ -108,7 +112,11 @@ else
   echo "[INFO] zoxide is already installed"
 fi
 
-brew install git-delta
-ln -nfs ~/dotfiles/.gitconfig ~/.gitconfig
+## install zoxide
+if ! which delta > /dev/null; then
+  echo "[INFO] install git-delta"
+  brew install git-delta
+else
+  echo "[INFO] git-delta is already installed"
+fi
 
-ln -nfs ~/dotfiles/git ~/.config/git
