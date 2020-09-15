@@ -1,9 +1,10 @@
 [user]
-	email = k.taichi0315@gmail.com
-	name = taichi0315
+	email = taichi.kushiro@nextbeat.net
+	name = Taichi Kushiro
 
 [core]
   pager = delta
+  excludesfile = ~/.config/git/ignore
 
 [delta]
   line-numbers = true
