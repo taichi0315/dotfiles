@@ -92,3 +92,13 @@ else
     echo "[INFO] node is already installed"
 fi
 
+## install exa
+if ! which exa > /dev/null; then
+  echo "[INFO] install exa"
+  brew install exa
+else
+  echo "[INFO] exa is already installed"
+fi
+
+brew install git-delta
+ln -nfs ~/dotfiles/.gitconfig ~/.gitconfig
