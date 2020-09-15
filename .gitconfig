@@ -9,6 +9,7 @@
 [delta]
   line-numbers = true
   side-by-side = true
+  syntax-theme = Github
 
 [interactive]
   diffFilter = delta --color-only
