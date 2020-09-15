@@ -4,6 +4,7 @@
 
 [core]
   pager = delta
+  excludesfile = ~/.config/git/ignore
 
 [delta]
   line-numbers = true

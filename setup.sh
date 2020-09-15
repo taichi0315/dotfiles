@@ -102,3 +102,5 @@ fi
 
 brew install git-delta
 ln -nfs ~/dotfiles/.gitconfig ~/.gitconfig
+
+ln -nfs ~/dotfiles/git ~/.config/git
