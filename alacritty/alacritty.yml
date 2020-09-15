@@ -1,8 +1,8 @@
 window:
   startup_mode: Maximized
-
-shell:
-  program: /bin/zsh
+  padding:
+    x: 5
+    y: 5
 
 key_bindings:
   - { key: N, mods: Command, action: SpawnNewInstance }
