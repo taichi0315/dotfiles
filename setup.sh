@@ -120,5 +120,13 @@ else
   echo "[INFO] git-delta is already installed"
 fi
 
+## install Github CLI
+if ! which gh > /dev/null; then
+  echo "[INFO] install Github CLI"
+  brew install gh
+else
+  echo "[INFO] Github CLI is already installed"
+fi
+
 brew install starship
 
