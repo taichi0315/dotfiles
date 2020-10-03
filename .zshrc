@@ -30,6 +30,9 @@ export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Content
 # python
 export PATH=/usr/local/bin:$PATH
 
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # nvm(node)
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
