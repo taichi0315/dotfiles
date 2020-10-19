@@ -72,6 +72,9 @@ if dein#load_state('~/.cache/dein')
   " auto pairs
   call dein#add('jiangmiao/auto-pairs')
 
+  " closetag
+  call dein#add('alvan/vim-closetag')
+
   call dein#end()
   call dein#save_state()
 endif
