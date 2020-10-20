@@ -1,8 +1,3 @@
-" Color scheme
-autocmd ColorScheme * highlight Normal ctermbg=none
-autocmd ColorScheme * highlight LineNr ctermbg=none
-colorscheme hybrid
-
 " Standard config
 set clipboard+=unnamed    " クリップボード連携
 set cursorline            " カーソル行にラインを表示
@@ -175,6 +170,11 @@ call defx#custom#column('git', 'indicators', {
 " Auto redraw of defx
 autocmd BufWritePost * call defx#redraw()
 autocmd BufEnter * call defx#redraw()
+
+" Color scheme
+autocmd ColorScheme * highlight Normal ctermbg=none
+autocmd ColorScheme * highlight LineNr ctermbg=none
+colorscheme hybrid
 
 " Config of vim-airline
 let g:airline_theme='lucius'
