@@ -73,6 +73,9 @@ if dein#load_state('~/.cache/dein')
   " gitgutter
   call dein#add('airblade/vim-gitgutter')
 
+  " emmet
+  call dein#add('mattn/emmet-vim')
+
   call dein#end()
   call dein#save_state()
 endif
