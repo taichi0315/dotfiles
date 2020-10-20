@@ -75,6 +75,9 @@ if dein#load_state('~/.cache/dein')
   " closetag
   call dein#add('alvan/vim-closetag')
 
+  " gitgutter
+  call dein#add('airblade/vim-gitgutter')
+
   call dein#end()
   call dein#save_state()
 endif
