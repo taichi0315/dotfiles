@@ -96,6 +96,7 @@ else
     echo "[INFO] node is already installed"
 fi
 
+<<<<<<< Updated upstream
 ## install exa
 if ! which exa > /dev/null; then
   echo "[INFO] install exa"
@@ -112,7 +113,7 @@ else
   echo "[INFO] zoxide is already installed"
 fi
 
-## install zoxide
+## install git-delta
 if ! which delta > /dev/null; then
   echo "[INFO] install git-delta"
   brew install git-delta
@@ -130,3 +131,10 @@ fi
 
 brew install starship
 
+## install gitui
+if ! which gitui > /dev/null; then
+    echo "[INFO] install gitui"
+    brew install gitui
+else
+    echo "[INFO] gitui is already installed"
+fi
