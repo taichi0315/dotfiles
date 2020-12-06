@@ -128,8 +128,6 @@ else
   echo "[INFO] Github CLI is already installed"
 fi
 
-brew install starship
-
 ## install gitui
 if ! which gitui > /dev/null; then
     echo "[INFO] install gitui"
@@ -137,3 +135,13 @@ if ! which gitui > /dev/null; then
 else
     echo "[INFO] gitui is already installed"
 fi
+
+## install bat
+if ! which bat > /dev/null; then
+    echo "[INFO] install bat"
+    brew install bat
+else
+    echo "[INFO] bat is already installed"
+fi
+
+brew install starship
