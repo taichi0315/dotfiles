@@ -69,12 +69,12 @@ else
     echo "[INFO] fzf is already installed"
 fi
 
-## install ag
-if ! which ag > /dev/null; then
-    echo "[INFO] install ag"
-    brew install the_silver_searcher
+## install rg
+if ! which rg > /dev/null; then
+    echo "[INFO] install ripgrep"
+    brew install ripgrep
 else
-    echo "[INFO] ag is already installed"
+    echo "[INFO] ripgrep is already installed"
 fi
 
 ## install python & pip install neovim
