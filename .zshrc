@@ -65,10 +65,3 @@ fshow() {
       {}
       FZF-EOF"
 }
-
-# fga - git modified files browser and staging
-fga() {
-  modified_files=$(git status --short | awk '{print $2}') &&
-  selected_files=$(echo "$modified_files" | fzf -m --preview 'git diff {}') &&
-  git add $selected_files
-}
