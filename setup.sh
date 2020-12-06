@@ -96,7 +96,6 @@ else
     echo "[INFO] node is already installed"
 fi
 
-<<<<<<< Updated upstream
 ## install exa
 if ! which exa > /dev/null; then
   echo "[INFO] install exa"
