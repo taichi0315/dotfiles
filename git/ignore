@@ -1,1 +1,3 @@
-metals/
+.metals/
+.vscode/
+.DS_Store
