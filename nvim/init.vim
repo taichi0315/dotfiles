@@ -152,7 +152,7 @@ call defx#custom#option('_', {
   \ 'buffer_name': 'exlorer',
   \ 'toggle': 1,
   \ 'resume': 1,
-  \ 'columns': 'indent:git:filename:mark',
+  \ 'columns': 'indent:git:icon:filename',
   \ })
 
 " Config for defx-git
