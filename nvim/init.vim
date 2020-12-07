@@ -50,7 +50,7 @@ if dein#load_state('~/.cache/dein')
 
   " fzf
   call dein#add('junegunn/fzf', {'build': './install --all'})
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  call dein#add('junegunn/fzf.vim')
 
   " indent line
   call dein#add('Yggdroot/indentLine')
