@@ -200,6 +200,8 @@ function! s:check_back_space() abort
 endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
+nmap <silent> gd <Plug>(coc-definition)
+
 " For indent line
 let g:indentLine_char = '¦'
 
