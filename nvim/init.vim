@@ -200,6 +200,7 @@ function! s:check_back_space() abort
 endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
 
+" code jump to define
 nmap <silent> gd <Plug>(coc-definition)
 
 " For indent line
