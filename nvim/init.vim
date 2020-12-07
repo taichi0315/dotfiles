@@ -73,9 +73,6 @@ if dein#load_state('~/.cache/dein')
   " gitgutter
   call dein#add('airblade/vim-gitgutter')
 
-  " emmet
-  call dein#add('mattn/emmet-vim')
-
   call dein#end()
   call dein#save_state()
 endif
@@ -155,7 +152,7 @@ call defx#custom#option('_', {
   \ 'buffer_name': 'exlorer',
   \ 'toggle': 1,
   \ 'resume': 1,
-  \ 'columns': 'indent:git:filename:mark',
+  \ 'columns': 'indent:git:icon:filename',
   \ })
 
 " Config for defx-git
@@ -202,6 +199,9 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" code jump to define
+nmap <silent> gd <Plug>(coc-definition)
 
 " For indent line
 let g:indentLine_char = '¦'
