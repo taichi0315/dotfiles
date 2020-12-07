@@ -38,7 +38,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('digitaltoad/vim-pug')        " Pug
 
   " coc.nvim
-  call dein#add('neoclide/coc.nvim')
+  call dein#add('neoclide/coc.nvim', {'branch': 'release'})
 
   " defx
   call dein#add('Shougo/defx.nvim')
@@ -50,7 +50,7 @@ if dein#load_state('~/.cache/dein')
 
   " fzf
   call dein#add('junegunn/fzf', {'build': './install --all'})
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  call dein#add('junegunn/fzf.vim')
 
   " indent line
   call dein#add('Yggdroot/indentLine')
