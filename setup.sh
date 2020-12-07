@@ -69,12 +69,12 @@ else
     echo "[INFO] fzf is already installed"
 fi
 
-## install ag
-if ! which ag > /dev/null; then
-    echo "[INFO] install ag"
-    brew install the_silver_searcher
+## install rg
+if ! which rg > /dev/null; then
+    echo "[INFO] install ripgrep"
+    brew install ripgrep
 else
-    echo "[INFO] ag is already installed"
+    echo "[INFO] ripgrep is already installed"
 fi
 
 ## install python & pip install neovim
@@ -112,7 +112,7 @@ else
   echo "[INFO] zoxide is already installed"
 fi
 
-## install zoxide
+## install git-delta
 if ! which delta > /dev/null; then
   echo "[INFO] install git-delta"
   brew install git-delta
@@ -128,5 +128,20 @@ else
   echo "[INFO] Github CLI is already installed"
 fi
 
-brew install starship
+## install gitui
+if ! which gitui > /dev/null; then
+    echo "[INFO] install gitui"
+    brew install gitui
+else
+    echo "[INFO] gitui is already installed"
+fi
 
+## install bat
+if ! which bat > /dev/null; then
+    echo "[INFO] install bat"
+    brew install bat
+else
+    echo "[INFO] bat is already installed"
+fi
+
+brew install starship
