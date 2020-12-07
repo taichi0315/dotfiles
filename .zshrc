@@ -28,7 +28,7 @@ eval "$(starship init zsh)"
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home
 
 # python
-export PATH=/usr/local/bin:$PATH
+export PATH="/usr/local/opt/python@3.7/bin:$PATH"
 
 # nvm(node)
 export NVM_DIR="$HOME/.nvm"

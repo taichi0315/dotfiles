@@ -73,9 +73,6 @@ if dein#load_state('~/.cache/dein')
   " gitgutter
   call dein#add('airblade/vim-gitgutter')
 
-  " emmet
-  call dein#add('mattn/emmet-vim')
-
   call dein#end()
   call dein#save_state()
 endif
@@ -86,7 +83,7 @@ if dein#check_install()
 endif
 
 " Config for Neovim
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python3_host_prog = '/usr/local/opt/python@3.7/bin/python3'
 
 " For defx
 " Key mapping of defx
