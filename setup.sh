@@ -132,6 +132,7 @@ fi
 if ! which gitui > /dev/null; then
     echo "[INFO] install gitui"
     brew install gitui
+    ln -s ~/dotfiles/gitui/key_config.ron ~/Library/Application\ Support/gitui/key_config.ron
 else
     echo "[INFO] gitui is already installed"
 fi
