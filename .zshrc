@@ -1,5 +1,6 @@
 export XDG_CONFIG_HOME=~/.config
 export LANG=ja_JP.UTF-8
+export EDITOR=nvim
 
 # alias
 alias vi='nvim'
