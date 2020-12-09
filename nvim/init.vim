@@ -38,7 +38,7 @@ if dein#load_state('~/.cache/dein')
   call dein#add('digitaltoad/vim-pug')        " Pug
 
   " coc.nvim
-  call dein#add('neoclide/coc.nvim')
+  call dein#add('neoclide/coc.nvim', {'branch': 'release'})
 
   " defx
   call dein#add('Shougo/defx.nvim')
@@ -50,7 +50,7 @@ if dein#load_state('~/.cache/dein')
 
   " fzf
   call dein#add('junegunn/fzf', {'build': './install --all'})
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  call dein#add('junegunn/fzf.vim')
 
   " indent line
   call dein#add('Yggdroot/indentLine')
@@ -152,7 +152,7 @@ call defx#custom#option('_', {
   \ 'buffer_name': 'exlorer',
   \ 'toggle': 1,
   \ 'resume': 1,
-  \ 'columns': 'indent:git:filename:mark',
+  \ 'columns': 'indent:git:icon:filename',
   \ })
 
 " Config for defx-git
@@ -199,6 +199,9 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 inoremap <silent><expr> <c-space> coc#refresh()
+
+" code jump to define
+nmap <silent> gd <Plug>(coc-definition)
 
 " For indent line
 let g:indentLine_char = '¦'
