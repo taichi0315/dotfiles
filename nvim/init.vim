@@ -158,6 +158,12 @@ call defx#custom#option('_', {
   \ 'columns': 'indent:git:icon:filename',
   \ })
 
+call defx#custom#column('icon', {
+    \ 'directory_icon': '▸',
+    \ 'opened_icon': '▾',
+    \ 'root_icon': ' ',
+    \ })
+
 " Config for defx-git
 call defx#custom#column('git', 'indicators', {
   \ 'Modified'  : '✹',
