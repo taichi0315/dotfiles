@@ -73,6 +73,9 @@ if dein#load_state('~/.cache/dein')
   " gitgutter
   call dein#add('airblade/vim-gitgutter')
 
+  " glow
+  call dein#add('npxbr/glow.nvim', {'do': ':GlowInstall'})
+
   call dein#end()
   call dein#save_state()
 endif
@@ -209,6 +212,9 @@ let g:indentLine_char = '¦'
 " For easy align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+" For glow
+nnoremap <silent><C-p> :Glow<CR>
 
 " 他のウィンドウ・アプリでの変更を反映する
 au FocusGained,BufEnter * checktime
