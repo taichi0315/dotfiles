@@ -10,34 +10,34 @@ key_bindings:
 # Background Opacity
 background_opacity: 0.7
 
-# Colors (Hybrid)
+# Colors (Material Theme)
 colors:
   # Default colors
   primary:
-    background: '#27292c'
-    foreground: '#d0d2d1'
+    background: '#263238'
+    foreground: '#eeffff'
 
   # Normal colors
   normal:
-    black:   '#35383b'
-    red:     '#b05655'
-    green:   '#769972'
-    yellow:  '#e1a574'
-    blue:    '#7693ac'
-    magenta: '#977ba0'
-    cyan:    '#749e99'
-    white:   '#848b92'
+    black:   '#000000'  # Arbitrary
+    red:     '#e53935'
+    green:   '#91b859'
+    yellow:  '#ffb62c'
+    blue:    '#6182b8'
+    magenta: '#ff5370'  # Dark pink of the original material theme
+    cyan:    '#39adb5'
+    white:   '#a0a0a0'  # Arbitrary
 
   # Bright colors
   bright:
-    black:   '#484c52'
-    red:     '#d27c7b'
-    green:   '#dffebe'
-    yellow:  '#f0d189'
-    blue:    '#96b1c9'
-    magenta: '#bfa5c7'
-    cyan:    '#9fc9c3'
-    white:   '#fcf7e2'
+    black:   '#4e4e4e'  # Arbitrary
+    red:     '#ff5370'
+    green:   '#c3e88d'
+    yellow:  '#ffcb6b'
+    blue:    '#82aaff'
+    magenta: '#f07178'  # Pink of the original material theme
+    cyan:    '#89ddff'
+    white:   '#ffffff'  # Arbitrary
 
 font:
   # Normal (roman) font face
