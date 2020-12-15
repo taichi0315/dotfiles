@@ -73,6 +73,9 @@ if dein#load_state('~/.cache/dein')
   " gitgutter
   call dein#add('airblade/vim-gitgutter')
 
+  " material
+  call dein#add('kaicataldo/material.vim', { 'branch': 'main' })
+
   call dein#end()
   call dein#save_state()
 endif
@@ -174,10 +177,11 @@ autocmd BufEnter * call defx#redraw()
 " Color scheme
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
-colorscheme hybrid
+let g:material_theme_style = 'darker'
+colorscheme material
 
 " Config of vim-airline
-let g:airline_theme='lucius'
+let g:airline_theme='material'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
