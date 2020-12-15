@@ -39,6 +39,7 @@ if dein#load_state('~/.cache/dein')
 
   " coc.nvim
   call dein#add('neoclide/coc.nvim', {'branch': 'release'})
+  call dein#add('antoinemadec/coc-fzf')
 
   " defx
   call dein#add('Shougo/defx.nvim')
