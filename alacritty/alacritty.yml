@@ -10,34 +10,34 @@ key_bindings:
 # Background Opacity
 background_opacity: 0.7
 
-# Colors (Material Theme)
+# Colors (Tokyo Night)
 colors:
   # Default colors
   primary:
-    background: '#263238'
-    foreground: '#eeffff'
+    background: '0x1a1b26'
+    foreground: '0xa9b1d6'
 
   # Normal colors
   normal:
-    black:   '#000000'  # Arbitrary
-    red:     '#e53935'
-    green:   '#91b859'
-    yellow:  '#ffb62c'
-    blue:    '#6182b8'
-    magenta: '#ff5370'  # Dark pink of the original material theme
-    cyan:    '#39adb5'
-    white:   '#a0a0a0'  # Arbitrary
+    black:   '0x32344a'
+    red:     '0xf7768e'
+    green:   '0x9ece6a'
+    yellow:  '0xe0af68'
+    blue:    '0x7aa2f7'
+    magenta: '0xad8ee6'
+    cyan:    '0x449dab'
+    white:   '0x787c99'
 
   # Bright colors
   bright:
-    black:   '#4e4e4e'  # Arbitrary
-    red:     '#ff5370'
-    green:   '#c3e88d'
-    yellow:  '#ffcb6b'
-    blue:    '#82aaff'
-    magenta: '#f07178'  # Pink of the original material theme
-    cyan:    '#89ddff'
-    white:   '#ffffff'  # Arbitrary
+    black:   '0x444b6a'
+    red:     '0xff7a93'
+    green:   '0xb9f27c'
+    yellow:  '0xff9e64'
+    blue:    '0x7da6ff'
+    magenta: '0xbb9af7'
+    cyan:    '0x0db9d7'
+    white:   '0xacb0d0'
 
 font:
   # Normal (roman) font face
