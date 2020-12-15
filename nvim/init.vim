@@ -177,7 +177,6 @@ autocmd BufEnter * call defx#redraw()
 " Color scheme
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
-let g:material_theme_style = 'darker'
 colorscheme material
 
 " Config of vim-airline
