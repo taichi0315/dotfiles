@@ -39,6 +39,7 @@ if dein#load_state('~/.cache/dein')
 
   " coc.nvim
   call dein#add('neoclide/coc.nvim', {'branch': 'release'})
+  call dein#add('antoinemadec/coc-fzf')
 
   " defx
   call dein#add('Shougo/defx.nvim')
@@ -72,6 +73,9 @@ if dein#load_state('~/.cache/dein')
 
   " gitgutter
   call dein#add('airblade/vim-gitgutter')
+
+  " material
+  call dein#add('kaicataldo/material.vim', { 'branch': 'main' })
 
   call dein#end()
   call dein#save_state()
@@ -155,6 +159,12 @@ call defx#custom#option('_', {
   \ 'columns': 'indent:git:icon:filename',
   \ })
 
+call defx#custom#column('icon', {
+    \ 'directory_icon': '▸',
+    \ 'opened_icon': '▾',
+    \ 'root_icon': ' ',
+    \ })
+
 " Config for defx-git
 call defx#custom#column('git', 'indicators', {
   \ 'Modified'  : '✹',
@@ -174,10 +184,10 @@ autocmd BufEnter * call defx#redraw()
 " Color scheme
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
-colorscheme hybrid
+colorscheme material
 
 " Config of vim-airline
-let g:airline_theme='lucius'
+let g:airline_theme='material'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
@@ -202,6 +212,9 @@ inoremap <silent><expr> <c-space> coc#refresh()
 
 " code jump to define
 nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " For indent line
 let g:indentLine_char = '¦'
