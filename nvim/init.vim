@@ -20,6 +20,9 @@ let loaded_matchparen = 1 " 括弧のハイライトを非表示
 " For ESC key mapping
 inoremap <silent> jj <ESC>
 
+" 他のウィンドウ・アプリでの変更を反映する
+au FocusGained,BufEnter * checktime
+
 " Add the dein installation directory into runtimepath
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
@@ -80,6 +83,9 @@ if dein#load_state('~/.cache/dein')
   " markdown preview
   call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'],
 					\ 'build': 'sh -c "cd app && yarn install"' })
+
+  " winresizer
+  call dein#add('simeji/winresizer')
 
   call dein#end()
   call dein#save_state()
@@ -230,5 +236,5 @@ nmap ga <Plug>(EasyAlign)
 " For markdown preview
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
-" 他のウィンドウ・アプリでの変更を反映する
-au FocusGained,BufEnter * checktime
+" For winresizer
+let g:winresizer_start_key = '<C-T>'
