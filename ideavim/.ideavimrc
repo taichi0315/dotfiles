@@ -1,2 +1,5 @@
 " For ESC key mapping
 inoremap <silent> jj <ESC>
+
+" ヤンクでクリップボードにコピー
+set clipboard+=unnamed
