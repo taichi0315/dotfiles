@@ -12,6 +12,9 @@ source ~/.zshrc
 ln -nfs ~/dotfiles/.gitconfig ~/.gitconfig
 ln -nfs ~/dotfiles/git ~/.config/git
 
+## set idea vim
+ln -nfs ~/dotfiles/ideavim/.ideavimrc ~/.ideavimrc
+
 ## install brew
 if ! which brew > /dev/null; then
     echo "[INFO] install brew"
