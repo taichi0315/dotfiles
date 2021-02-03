@@ -229,7 +229,6 @@ nmap ga <Plug>(EasyAlign)
 
 " For markdown preview
 nmap <C-p> <Plug>MarkdownPreviewToggle
-let g:mkdp_auto_start = 1
 
 " 他のウィンドウ・アプリでの変更を反映する
 au FocusGained,BufEnter * checktime
