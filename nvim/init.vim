@@ -81,6 +81,9 @@ if dein#load_state('~/.cache/dein')
   call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'],
 					\ 'build': 'sh -c "cd app && yarn install"' })
 
+  " easy motion
+  call dein#add('easymotion/vim-easymotion')
+
   call dein#end()
   call dein#save_state()
 endif
@@ -229,6 +232,9 @@ nmap ga <Plug>(EasyAlign)
 
 " For markdown preview
 nmap <C-p> <Plug>MarkdownPreviewToggle
+
+" For easy motion
+map <Leader> <Plug>(easymotion-prefix)
 
 " 他のウィンドウ・アプリでの変更を反映する
 au FocusGained,BufEnter * checktime
