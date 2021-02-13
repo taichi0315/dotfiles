@@ -148,4 +148,28 @@ else
     echo "[INFO] bat is already installed"
 fi
 
+## install navi
+if ! which navi > /dev/null; then
+    echo "[INFO] install navi"
+    brew install navi
+else
+    echo "[INFO] navi is already installed"
+fi
+
+## install procs
+if ! which procs > /dev/null; then
+    echo "[INFO] install procs"
+    brew install procs
+else
+    echo "[INFO] procs is already installed"
+fi
+
+## install grex
+if ! which grex > /dev/null; then
+    echo "[INFO] install grex"
+    brew install grex
+else
+    echo "[INFO] grex is already installed"
+fi
+
 brew install starship
