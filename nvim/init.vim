@@ -90,6 +90,9 @@ if dein#load_state('~/.cache/dein')
   " easy motion
   call dein#add('easymotion/vim-easymotion')
 
+  " rainbow parentheses
+  call dein#add('junegunn/rainbow_parentheses.vim')
+
   call dein#end()
   call dein#save_state()
 endif
@@ -240,3 +243,8 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " For easy motion
 map <Leader> <Plug>(easymotion-prefix)
+
+" For rainbow parentheses
+let g:rainbow#pairs = [['(', ')'], ['{', '}']]
+autocmd VimEnter * RainbowParentheses
+let g:rainbow#blacklist = [15, 152, 231, 248]
