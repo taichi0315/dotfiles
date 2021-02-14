@@ -242,9 +242,6 @@ nmap ga <Plug>(EasyAlign)
 " For markdown preview
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
-" For easy motion
-map <Leader> <Plug>(easymotion-prefix)
-
 " For rainbow parentheses
 let g:rainbow#pairs = [['(', ')'], ['{', '}']]
 autocmd VimEnter * RainbowParentheses
