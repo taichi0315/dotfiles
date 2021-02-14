@@ -201,7 +201,7 @@ colorscheme material
 " Config of vim-airline
 let g:airline_theme='material'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Change cursor by vim mode
 if has('vim_starting')
