@@ -17,7 +17,7 @@ ln -nfs ~/dotfiles/ideavim/.ideavimrc ~/.ideavimrc
 
 ## link tmux config
 ln -nfs ~/dotfiles/.tmux.conf ~/.tmux.conf
-#
+
 ## link alacritty config
 ln -nfs ~/dotfiles/alacritty ~/.config/alacritty
 
@@ -137,6 +137,7 @@ fi
 if ! which gh > /dev/null; then
   echo "[INFO] install Github CLI"
   brew install gh
+  gh config set pager delta
 else
   echo "[INFO] Github CLI is already installed"
 fi
