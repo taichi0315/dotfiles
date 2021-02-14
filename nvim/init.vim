@@ -201,6 +201,9 @@ autocmd ColorScheme * highlight LineNr ctermbg=none
 let g:material_theme_style = 'darker'
 colorscheme material
 
+" For vim-scala
+let g:scala_scaladoc_indent = 1
+
 " Config of vim-airline
 let g:airline_theme='material'
 let g:airline#extensions#tabline#enabled = 1
