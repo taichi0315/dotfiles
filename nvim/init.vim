@@ -6,7 +6,7 @@ set mouse=a               " 全てのモードでマウス操作を有効化
 set shiftwidth=2          " インデント幅を指定
 set smartindent           " 改行時のインデントを自動化
 set tabstop=2             " タブ幅を指定
-set updatetime=250        " ファイルの読み込み更新頻度
+set updatetime=100        " ファイルの読み込み更新頻度
 set number                " 行番号を表示
 set ignorecase            " 大文字小文字を区別しない
 set smartcase             " 大文字検索時、大文字小文字を区別する
