@@ -23,6 +23,12 @@ inoremap <silent> jj <ESC>
 " Add the dein installation directory into runtimepath
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
 
+" Config for Neovim
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+" 他のウィンドウ・アプリでの変更を反映する
+au FocusGained,BufEnter * checktime
+
 " Add plugIn by dein
 if dein#load_state('~/.cache/dein')
   call dein#begin('~/.cache/dein')
@@ -92,9 +98,6 @@ endif
 if dein#check_install()
   call dein#install()
 endif
-
-" Config for Neovim
-let g:python3_host_prog = '/usr/local/bin/python3'
 
 " For defx
 " Key mapping of defx
@@ -235,6 +238,3 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 
 " For easy motion
 map <Leader> <Plug>(easymotion-prefix)
-
-" 他のウィンドウ・アプリでの変更を反映する
-au FocusGained,BufEnter * checktime
