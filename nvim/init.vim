@@ -6,7 +6,7 @@ set mouse=a               " 全てのモードでマウス操作を有効化
 set shiftwidth=2          " インデント幅を指定
 set smartindent           " 改行時のインデントを自動化
 set tabstop=2             " タブ幅を指定
-set updatetime=250        " ファイルの読み込み更新頻度
+set updatetime=100        " ファイルの読み込み更新頻度
 set number                " 行番号を表示
 set ignorecase            " 大文字小文字を区別しない
 set smartcase             " 大文字検索時、大文字小文字を区別する
@@ -22,6 +22,12 @@ inoremap <silent> jj <ESC>
 
 " Add the dein installation directory into runtimepath
 set runtimepath+=~/.cache/dein/repos/github.com/Shougo/dein.vim
+
+" Config for Neovim
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+" 他のウィンドウ・アプリでの変更を反映する
+au FocusGained,BufEnter * checktime
 
 " Add plugIn by dein
 if dein#load_state('~/.cache/dein')
@@ -81,6 +87,12 @@ if dein#load_state('~/.cache/dein')
   call dein#add('iamcco/markdown-preview.nvim', {'on_ft': ['markdown', 'pandoc.markdown', 'rmd'],
 					\ 'build': 'sh -c "cd app && yarn install"' })
 
+  " easy motion
+  call dein#add('easymotion/vim-easymotion')
+
+  " rainbow parentheses
+  call dein#add('junegunn/rainbow_parentheses.vim')
+
   call dein#end()
   call dein#save_state()
 endif
@@ -89,9 +101,6 @@ endif
 if dein#check_install()
   call dein#install()
 endif
-
-" Config for Neovim
-let g:python3_host_prog = '/usr/local/opt/python@3.7/bin/python3'
 
 " For defx
 " Key mapping of defx
@@ -186,14 +195,20 @@ autocmd BufWritePost * call defx#redraw()
 autocmd BufEnter * call defx#redraw()
 
 " Color scheme
+set termguicolors
 autocmd ColorScheme * highlight Normal ctermbg=none
 autocmd ColorScheme * highlight LineNr ctermbg=none
+let g:material_theme_style = 'darker'
 colorscheme material
+
+" For vim-scala
+let g:scala_scaladoc_indent = 1
 
 " Config of vim-airline
 let g:airline_theme='material'
 let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 
 " Change cursor by vim mode
 if has('vim_starting')
@@ -230,5 +245,7 @@ nmap ga <Plug>(EasyAlign)
 " For markdown preview
 nmap <C-p> <Plug>MarkdownPreviewToggle
 
-" 他のウィンドウ・アプリでの変更を反映する
-au FocusGained,BufEnter * checktime
+" For rainbow parentheses
+let g:rainbow#pairs = [['(', ')'], ['{', '}']]
+autocmd VimEnter * RainbowParentheses
+let g:rainbow#blacklist = [15, 152, 231, 248]

@@ -45,7 +45,7 @@ export NVM_DIR="$HOME/.nvm"
 # fvi - search file and open file by nvim
 fvi() {
   files=$(git ls-files) &&
-  selected_files=$(echo "$files" | fzf -m --preview 'head -100 {}') &&
+  selected_files=$(echo "$files" | fzf -m --preview "bat --color=always --style=header,grid --line-range :100 {}") &&
   vi $selected_files
 }
 
@@ -56,16 +56,4 @@ fbr() {
   branch=$(echo "$branches" |
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
-}
-
-# fshow - git commit browser
-fshow() {
-  git log --graph --color=always \
-    --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
-    --bind "ctrl-m:execute:
-      (grep -o '[a-f0-9]\{7\}' | head -1 |
-      xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
-      {}
-      FZF-EOF"
 }

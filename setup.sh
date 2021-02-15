@@ -8,12 +8,27 @@ emulate -R sh
 ln -nfs ~/dotfiles/.zshrc ~/.zshrc
 source ~/.zshrc
 
-## set git config
+## link git config
 ln -nfs ~/dotfiles/.gitconfig ~/.gitconfig
 ln -nfs ~/dotfiles/git ~/.config/git
 
-## set idea vim
+## link idea vim
 ln -nfs ~/dotfiles/ideavim/.ideavimrc ~/.ideavimrc
+
+## link tmux config
+ln -nfs ~/dotfiles/.tmux.conf ~/.tmux.conf
+
+## link alacritty config
+ln -nfs ~/dotfiles/alacritty ~/.config/alacritty
+
+## link neovim config
+ln -nfs ~/dotfiles/nvim ~/.config/nvim
+
+## link gitui config
+ln -s ~/dotfiles/gitui/key_config.ron ~/Library/Application\ Support/gitui/key_config.ron
+
+## make directory .config
+mkdir -p ~/.config
 
 ## install brew
 if ! which brew > /dev/null; then
@@ -23,14 +38,11 @@ else
     echo "[INFO] brew is already installed"
 fi
 
-## make directory .config
-mkdir -p ~/.config
-
 ## install tmux
 if ! which tmux > /dev/null; then
     echo "[INFO] install tmux"
     brew install tmux
-    ln -nfs ~/dotfiles/.tmux.conf ~/.tmux.conf
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 else
     echo "[INFO] tmux is already installed"
 fi
@@ -39,7 +51,6 @@ fi
 if ! which alacritty > /dev/null; then
     echo "[INFO] install alacritty"
     brew cask install alacritty
-    ln -nfs ~/dotfiles/alacritty ~/.config/alacritty
 else
     echo "[INFO] alacritty is already installed"
 fi
@@ -49,7 +60,6 @@ fi
 if ! which nvim > /dev/null; then
     echo "[INFO] install neovim"
     brew install neovim
-    ln -nfs ~/dotfiles/nvim ~/.config/nvim
 else
     echo "[INFO] neovim is already installed"
 fi
@@ -127,6 +137,7 @@ fi
 if ! which gh > /dev/null; then
   echo "[INFO] install Github CLI"
   brew install gh
+  gh config set pager delta
 else
   echo "[INFO] Github CLI is already installed"
 fi
@@ -135,7 +146,6 @@ fi
 if ! which gitui > /dev/null; then
     echo "[INFO] install gitui"
     brew install gitui
-    ln -s ~/dotfiles/gitui/key_config.ron ~/Library/Application\ Support/gitui/key_config.ron
 else
     echo "[INFO] gitui is already installed"
 fi
@@ -148,4 +158,34 @@ else
     echo "[INFO] bat is already installed"
 fi
 
-brew install starship
+## install navi
+if ! which navi > /dev/null; then
+    echo "[INFO] install navi"
+    brew install navi
+else
+    echo "[INFO] navi is already installed"
+fi
+
+## install procs
+if ! which procs > /dev/null; then
+    echo "[INFO] install procs"
+    brew install procs
+else
+    echo "[INFO] procs is already installed"
+fi
+
+## install grex
+if ! which grex > /dev/null; then
+    echo "[INFO] install grex"
+    brew install grex
+else
+    echo "[INFO] grex is already installed"
+fi
+
+## install starship
+if ! which starship > /dev/null; then
+    echo "[INFO] install starship"
+    brew install starship
+else
+    echo "[INFO] starship is already installed"
+fi
