@@ -8,6 +8,9 @@ emulate -R sh
 ln -nfs ~/dotfiles/.zshrc ~/.zshrc
 source ~/.zshrc
 
+## make directory .config
+mkdir -p ~/.config
+
 ## link git config
 ln -nfs ~/dotfiles/.gitconfig ~/.gitconfig
 ln -nfs ~/dotfiles/git ~/.config/git
@@ -26,9 +29,6 @@ ln -nfs ~/dotfiles/nvim ~/.config/nvim
 
 ## link gitui config
 ln -s ~/dotfiles/gitui/key_config.ron ~/Library/Application\ Support/gitui/key_config.ron
-
-## make directory .config
-mkdir -p ~/.config
 
 ## install brew
 if ! which brew > /dev/null; then
