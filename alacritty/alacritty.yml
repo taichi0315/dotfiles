@@ -4,9 +4,6 @@ window:
     x: 5
     y: 5
 
-key_bindings:
-  - { key: N, mods: Command, action: SpawnNewInstance }
-
 env:
   TERM: alacritty
 
