@@ -174,14 +174,6 @@ else
     echo "[INFO] procs is already installed"
 fi
 
-## install grex
-if ! which grex > /dev/null; then
-    echo "[INFO] install grex"
-    brew install grex
-else
-    echo "[INFO] grex is already installed"
-fi
-
 ## install starship
 if ! which starship > /dev/null; then
     echo "[INFO] install starship"
