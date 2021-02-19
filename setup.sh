@@ -158,14 +158,6 @@ else
     echo "[INFO] bat is already installed"
 fi
 
-## install navi
-if ! which navi > /dev/null; then
-    echo "[INFO] install navi"
-    brew install navi
-else
-    echo "[INFO] navi is already installed"
-fi
-
 ## install procs
 if ! which procs > /dev/null; then
     echo "[INFO] install procs"
