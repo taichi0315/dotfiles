@@ -181,3 +181,11 @@ if ! which starship > /dev/null; then
 else
     echo "[INFO] starship is already installed"
 fi
+
+## install gwak
+if ! which gwak > /dev/null; then
+    echo "[INFO] install gwak"
+    brew install gwak
+else
+    echo "[INFO] gwak is already installed"
+fi
