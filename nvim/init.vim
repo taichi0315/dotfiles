@@ -252,3 +252,20 @@ nmap <C-p> <Plug>MarkdownPreviewToggle
 let g:rainbow#pairs = [['(', ')'], ['{', '}']]
 autocmd VimEnter * RainbowParentheses
 let g:rainbow#blacklist = [15, 152, 231, 248]
+
+" For silicon
+let g:silicon = {
+      \   'theme':               'base16',
+      \   'font':    'Noto Sans Javanese',
+      \   'background':         '#212121',
+      \   'shadow-color':       '#a6accd',
+      \   'line-pad':                   2,
+      \   'pad-horiz':                 80,
+      \   'pad-vert':                 100,
+      \   'shadow-blur-radius':         0,
+      \   'shadow-offset-x':            0,
+      \   'shadow-offset-y':            0,
+      \   'line-number':           v:true,
+      \   'round-corner':          v:true,
+      \   'window-controls':       v:true,
+      \ }
