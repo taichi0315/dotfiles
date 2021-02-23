@@ -93,6 +93,9 @@ if dein#load_state('~/.cache/dein')
   " rainbow parentheses
   call dein#add('junegunn/rainbow_parentheses.vim')
 
+  " vim silicon
+  call dein#add('segeljakt/vim-silicon')
+
   call dein#end()
   call dein#save_state()
 endif

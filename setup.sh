@@ -181,3 +181,11 @@ if ! which gawk > /dev/null; then
 else
     echo "[INFO] gawk is already installed"
 fi
+
+## install silicon
+if ! which silicon > /dev/null; then
+    echo "[INFO] install silicon"
+    brew install silicon
+else
+    echo "[INFO] silicon is already installed"
+fi
