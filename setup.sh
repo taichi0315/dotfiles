@@ -27,9 +27,6 @@ ln -nfs ~/dotfiles/alacritty ~/.config/alacritty
 ## link neovim config
 ln -nfs ~/dotfiles/nvim ~/.config/nvim
 
-## link gitui config
-ln -s ~/dotfiles/gitui/key_config.ron ~/Library/Application\ Support/gitui/key_config.ron
-
 ## install brew
 if ! which brew > /dev/null; then
     echo "[INFO] install brew"
