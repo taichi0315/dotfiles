@@ -16,7 +16,7 @@ ln -nfs ~/dotfiles/.gitconfig ~/.gitconfig
 ln -nfs ~/dotfiles/git ~/.config/git
 
 ## link idea vim
-ln -nfs ~/dotfiles/ideavim/.ideavimrc ~/.ideavimrc
+ln -nfs ~/dotfiles/intellij/.ideavimrc ~/.ideavimrc
 
 ## link tmux config
 ln -nfs ~/dotfiles/.tmux.conf ~/.tmux.conf
